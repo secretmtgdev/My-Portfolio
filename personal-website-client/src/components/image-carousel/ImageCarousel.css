@@ -1,0 +1,87 @@
+/* Special thanks to GreatFrontend for helping me become a better frontend engineer
+ * and providing great coding paradigms/conventions to follow */
+.image-carousel {
+    background-color: #000000;
+    height: 400px;
+    overflow: hidden;
+    position: relative;
+    width: min(600px, 100vw);
+}
+
+.image-carousel__image {
+    object-fit: contain;
+    position: absolute;
+    inset: 0; /* Shift the element with respect to parent */
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s linear;
+}
+
+.image-carousel__button {
+    --size: 40px;
+    
+    height: var(--size);
+    width: var(--size);
+    background-color: #212121;
+    border-radius: 100%;
+    cursor: pointer;
+    color: #ffffff;
+    border: none;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.image-carousel__button:hover {
+    background-color: #393939;
+}
+
+.image-carousel__button--prev {
+    left: 16px;
+}
+
+.image-carousel__button--next {
+    right: 16px;
+}
+
+.image-carousel__pages {
+    background-color: #000000;
+    display: inline-flex;
+    gap: 8px;
+    padding: 8px;
+    position: absolute;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.image-carousel__pages__button {
+    --size: 8px;
+    height: var(--size);
+    width: var(--size);
+    border: none;
+    border-radius: 100%;
+    background-color: #808080;
+    cursor: pointer;
+    display: inline-block;
+    flex-shrink: 0;
+    padding: 0;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.image-carousel__pages__button:hover {
+    background-color: #d0d0d0;
+}
+
+.image-carousel__pages__button--active {
+    background-color: #ffffff;
+}
+
+/** Handle showing only two images in the DOM at a time */
+.image-carousel__image--displaced-left {
+    transform: translateX(-100%);
+}
+
+.image-carousel__image--displaced-right {
+    transform: translateX(100%);
+}
