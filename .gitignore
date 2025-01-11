@@ -2,7 +2,7 @@ package-lock.json
 package.json
 
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 
@@ -10,7 +10,7 @@ package.json
 /coverage
 
 # production
-/build
+*/build
 
 # misc
 .DS_Store
